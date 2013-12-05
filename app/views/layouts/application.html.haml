@@ -1,0 +1,93 @@
+!!! 5
+%html
+  %head
+    %title Jarvis
+
+    - if @splash_page
+      = stylesheet_link_tag "heyoo"
+    - else
+      = stylesheet_link_tag    "application", :media => "all"
+      
+    = javascript_include_tag "modernizr"
+    = javascript_include_tag "fastclick"
+    -#
+      = javascript_include_tag "https://use.typekit.net/dey0ita.js"
+      :javascript
+        try{Typekit.load();}catch(e){}
+    - if @splash_page
+      %script{:src => "//use.typekit.net/kgt1tta.js", :type => "text/javascript"}
+      :javascript
+        try{Typekit.load();}catch(e){}
+    = csrf_meta_tags
+
+    %meta{:name => "description", :content => ""}
+    %meta{:name => "HandheldFriendly", :content => "True"}
+    %meta{:name => "MobileOptimized", :content => "320"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
+
+  %body
+    - if @splash_page
+      = yield
+
+    - else
+      = render 'shared/nav'
+      .outer-wrap
+        .inner-wrap
+
+          //.nav-push
+
+          - if !flash[:notice].nil?
+            .notice-container
+              .notice-msg.info-msg #{flash[:notice]}
+          - if !flash[:success].nil?
+            .notice-container
+              .notice-msg.success-msg #{flash[:success]}
+          - if !flash[:alert].nil?
+            .notice-container
+              .notice-msg.info-msg #{flash[:alert]}
+          //- if @title
+          //  .title-wrapper
+          //    %h1 #{@title}
+
+          .content-wrapper
+            .sidebar
+              = render 'shared/sidebar'
+            .main-content
+              - if @title
+                .main-title
+                  %span.left #{@title}
+                  - if @embed_post
+                    %label{:for => "post_box"}
+                      %img{:src => "/assets/compose_turq.png"}
+                      %span New Post
+                    %input{:id => "post_box", :type => "checkbox"}
+                    .post-box
+                      .post-wrapper
+                        = render :partial => 'contents/post'
+                  - if @embed_reply
+                    %label{:for => "reply_box"}
+                      %img{:src => "/assets/reply-arrow.svg"}
+                      %span Reply
+                    %input{:id => "reply_box", :type => "checkbox"}
+                    .post-box
+                      .post-wrapper
+                        = render :partial => 'contents/reply'
+              = yield
+        - if @show_reply
+          .push
+      -#
+        - if @show_reply
+          .reply-footer
+            .reply-top
+              %label{:for => "reply_box"}
+                %img{:src => "/assets/reply-arrow.svg"}
+                %span Reply
+            %input{:id => "reply_box", :type => "checkbox"}
+            .reply-box
+              .reply-wrapper
+                = render :partial => 'contents/reply'
+
+      = javascript_include_tag "application"
+      :javascript
+        $.backstretch("/assets/skyline-color.jpg", {centeredX: false, centeredY: false});

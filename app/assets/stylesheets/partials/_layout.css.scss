@@ -1,0 +1,55 @@
+
+* {
+  margin: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: transparent;
+}
+
+.outer-wrap {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  width: 100%;
+  min-height: 100%;
+}
+
+.inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.content-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $max-width;
+
+  @media (min-width: $transition-width) {
+    margin-top: 20px;
+    padding: 0 $side-padding;
+  }
+}
+
+.main-content {
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: $transition-width) {
+    width: $max-width - $sidebar-width;
+    max-width: 500px;
+    float: left;
+  }
+
+  @media (min-width: 850px) {
+    max-width: $max-read-width;
+  }
+}

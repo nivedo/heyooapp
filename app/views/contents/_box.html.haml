@@ -1,0 +1,18 @@
+.box-wrapper
+  .box-top
+    .avatar
+      = image_tag avatar_url(content.user), :class => "user-icon"
+    = link_to content.user.display_name, user_url(content.user)
+    %p.time-text #{time_ago_in_words(content.created_at)} ago
+  .box-content
+    
+    
+    -#
+      - if content.image
+        .box-image
+          = image_tag content.image.file_url.to_s
+    
+    
+    #{markdown content.description}
+
+  = render "actions", :content => content

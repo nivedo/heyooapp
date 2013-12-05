@@ -1,0 +1,14 @@
+.content-actions
+  %ul
+    - if content.children.length > 0
+      %li #{@content.children.length} Comments
+    - if content.permitted_actions(current_user).include?(:edit)
+      %li
+        = link_to "Edit", root_url
+    - if content.permitted_actions(current_user).include?(:thank)
+      %li
+        = link_to "Thank", root_url, :class => "soft"
+    - if content.permitted_actions(current_user).include?(:report)
+      %li
+        = link_to "Report", root_url, :class => "soft"
+    

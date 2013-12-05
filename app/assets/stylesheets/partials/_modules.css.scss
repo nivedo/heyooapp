@@ -1,0 +1,336 @@
+.notice-container {
+  margin: 0 auto;
+  font-size: 1em;
+  color: $blue-gray;
+  text-align: center;
+  
+  padding: 0.5em 0;
+
+  background-color: $blue-white;
+
+  width: 100%;
+}
+
+.title-wrapper {
+  margin: 0 auto;
+  font-size: 0.8em;
+  color: $blue-gray;
+  text-align: center;
+  
+  padding: 0.25em 3%;
+
+  background-color: $blue-white;
+
+  width: 94%;
+}
+
+.main-title {
+  padding: 0.5em 0;
+
+  @media (min-width: $transition-width) {
+    padding: 0.5em 0;
+  }
+
+  .left {
+    font-weight: 300;
+    font-size: 1.5em;
+  }
+
+  label {
+    float: right;
+    text-align: right;
+    color: $accent-color;
+    cursor: pointer;
+
+    img {
+      width: 1.3em;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 0.3em;
+    }
+
+  }
+}
+
+.content-actions {
+  background: transparent;
+  color: lighten($blue-gray,40);
+  margin-top: 1.5em;
+  height: 1.25em;
+  width: 100%;
+
+  label {
+    float: left;
+    text-align: left;
+    color: $accent-color;
+    cursor: pointer;
+
+    img {
+      width: 1.3em;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 0.3em;
+    }
+  }
+
+  ul li {
+    float: left;
+    margin-right: 0.25em;
+
+    &:not(:first-child):before {
+      font-weight: bold;
+      content: "·"
+    }
+
+    a {
+      color: $accent-color;
+    }
+  }
+
+  .soft {
+    color: lighten($blue-gray,40);
+  }
+}
+
+.directory {
+  //display: block;
+  margin: 0 auto;
+
+  img {
+    border-radius: 0px;
+  }
+
+  ul {
+    text-align: left;
+  }
+
+  .avatar {
+    display: inline-block;
+    float: left;
+    height: 3.5em;
+    padding: 0.5em 0;
+
+    img {
+      border-radius: $default-radius;
+      height: 100%;
+      margin-right: 1em;
+    }
+  }
+
+  li {
+    @include clearfix;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 0;
+    border-top: 1px solid $border-gray;
+
+    zoom: 1;
+    width: 100%;
+    height: 4.5em;
+
+    color: lighten($blue-gray,40);
+
+    a {
+      color: $accent-color;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  .box-right {
+    margin-top: 0.5em;
+  }
+}
+
+.box-wrapper {
+  width: 100%;
+  display: block;
+  padding: 1em 1em;
+
+  @media (min-width: $transition-width) {
+    padding-left: 0.25em;
+  }
+
+  //background-color: $off-white;
+
+  border-top: 1px solid $blue-white;
+
+  &:first-of-type {
+    border: none;
+  }
+
+  .box-content {
+    margin-right: 1.5em;
+    margin-top: 1em;
+  }
+
+  // JN NOTE: Hacky solution ... fix later
+  .box-image {
+    img {
+      width: 107%;
+      max-width: 400px;
+      margin-left: -1em;
+      height: auto;
+
+      @media (min-width: $transition-width) {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .summary-content {
+    margin-right: 1.5em;
+    margin-left: 3em
+  }
+
+  a {
+    text-decoration: none;
+    color: $accent-color;
+      
+    &:hover {
+      color: darken($accent-color, 5);
+    }
+  }
+
+  .box-top a {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .alignright {
+    float: right;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: $accent-color;
+  }
+
+  .line-name {
+    margin-bottom: 0.25em;
+  }
+  
+  .time-text {
+    font-size: 1em;
+    color: lighten($blue-gray,40);
+  }
+
+  .passive-text {
+    font-size: 1em;
+    font-weight: bold;
+    color: lighten($blue-gray,10);
+  }
+
+  .avatar {
+    width: 2.5em;
+    height: 100%;
+    padding-right: 0.5em;
+    float: left;
+    display: block;
+
+    img {
+      width: 90%;
+      border-radius: $default-radius;
+    }
+  }
+}
+
+.comment {
+  background: $off-white;
+  padding-left: 1em;
+
+  &:first-child {
+    @include border-top-radius($default-radius);
+  }
+
+  &:last-child {
+    margin-bottom: 1.5em;
+    @include border-bottom-radius($default-radius);
+  }
+
+  border-top: none;
+}
+
+
+.push {
+  height: $footer-height;
+}
+
+.reply-box {
+  position: relative;
+  bottom: 0;
+  //height: 250px;
+  background-color: white;
+  //border-top: 2px solid $border-gray;
+
+  width: 100%;
+
+  display: none;
+}
+
+.reply-wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: $max-width;
+
+  height: 100%;
+
+  color: $blue-gray;
+}
+
+.reply-footer {
+  position: fixed;
+  bottom: 0;
+
+  background-color: white;
+  box-shadow: 0 0 4px darken($border-gray,20);
+  //border-top: 2px solid $border-gray;
+  color: $accent-color;
+
+  width: 100%;
+}
+
+.reply-top {
+  padding-left: 0.5em;
+  height: $footer-height;
+  font-size: 1.2em;
+
+  //position: absolute;
+  //display:block;
+  //left: 50%;
+  //margin-left: -40px;
+
+  label {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  img {
+    width: 2em;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span {
+    line-height: $footer-height;
+  }
+}
+
+// Hacky reply footer stuff
+
+[type=checkbox] {
+  display: none;
+}
+
+label > * { pointer-events: none; }
+
+:checked + div {
+  display: block !important;
+}

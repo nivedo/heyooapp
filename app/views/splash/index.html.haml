@@ -1,0 +1,181 @@
+#header.container
+  .content
+    .logo.img_holder
+      %img{:alt => "Heyoo Logo", :src => "/assets/heyoo_logo.png"}/
+    %ul
+      %li
+        %a.scrolling{:href => "#about"} About
+      
+      %li
+        %a.login{:href => "#home"} Log In
+      %li
+        = link_to "Sign Up", signup_url, 'data-no-turbolink' => true
+        /%a.scrolling{:href => "#sign-up"} Sign Up
+      %li
+        %a.scrolling{:href => "#contact"} Contact
+  / .content
+/ .container
+#page
+  #mobile_header
+    #mobile_nav_switch.img_holder
+      %img{:alt => "", :src => "/assets/burger.png"}/
+    .logo.img_holder
+      %img{:alt => "Heyoo", :src => "/assets/heyoo_logo.png"}/
+  / #mobile_header
+  #test.container.white_background.border.center-text
+    %h2
+      Simple
+      %br/
+      Building &amp; Neighborhood
+      %br/
+      Communication
+    #building.content.img_holder
+      %img{:alt => "", :src => "/assets/city.png"}/
+    / .content
+    /LOGIN COMMENTED OUT
+    #login_screen.container
+      #login_div.content.absolute
+        = form_tag(sessions_path, :url => { :action => "create" }, :id => 'login_form' ) do
+          %p
+            = email_field_tag :email, nil, :placeholder => "Email", :class => "req"
+          %p
+            = password_field_tag :password, nil, :placeholder => "Password", :class => "req"
+          = submit_tag "Log In", :class => "submit"
+        -#
+          %form#login_form{:method => "post", :name => "login_form"}
+            %p
+              %input{:name => "", :placeholder => "Email", :type => "email"}/
+            %p
+              %input{:name => "", :placeholder => "Password", :type => "password"}/
+            %p
+              %input{:type => "submit", :value => "Submit"}/
+            %p.note
+              %a{:href => ""} Create Account
+          .error.museo-sans
+            .img_holder
+            %p
+              Incorrect User Name or Password.
+              %br/
+              %a.hide_error{:href => "#"} Try Again
+              or Reset by Entering
+              = succeed "Your" do
+                %br/
+              Email
+            %form{:method => "post"}
+              %p
+                %input{:name => "email", :placeholder => "Email", :type => "email"}/
+              %p
+                %input#login_button{:type => "submit", :value => "Submit"}/
+      / .content
+    / .container
+  / .container #home
+  #about.container.grain_background.border{:style => "z-index: 2;"}
+    .content
+      %h2.underlined.center-text
+        %span About
+      %h3
+        Send messages to your
+        %br/
+        neighborhood, building,
+        %br/
+        floor or individuals.
+      %p
+        Available as a mobile app or web version. Pellentes que orna
+        resem lacinia quam venenatis vestibulum. Sed posuere consecteturest at lobortis. Etiam porta. Lorem ipsum
+        dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. A
+        communi observantia non est recedendum. Sed posuere consecteturest at lobortis..
+    / .content
+    #skyline.img_holder
+      %img{:alt => "", :src => "/assets/buildings.png"}/
+  / .container
+  #sign-up.container.grey_background.border.museo-sans{:style => "z-index: 4;"}
+    .content
+      %h2.underlined.center-text.museo-slab
+        %span Sign Up
+      %form{:action => "", :method => "post"}
+        .half.float_left
+          %p
+            %select{:name => "type"}
+              %option{:value => ""} Are You A
+              %option{:value => "1"} Type 1
+              %option{:value => "2"} Type 2
+              %option{:value => "3"} Type 3
+          %p
+            %label First Name
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p
+            %label Last Name
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p
+            %label Email Address
+            %input{:maxlength => "255", :name => "", :type => "email"}/
+          %p
+            %label Password
+            %input{:maxlength => "255", :name => "", :type => "password"}/
+          %p
+            %label Confirm Password
+            %input{:maxlength => "255", :name => "", :type => "password"}/
+        / .half
+        .half.float_left
+          %h3 Your Building
+          %p
+            %label Building Name
+            %br/
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p
+            %label Address
+            %br/
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p
+            %label Unit #
+            %br/
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p
+            %label City
+            %br/
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p.state.float_left
+            %label State
+            %br/
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p.zip.float_left
+            %label Zip
+            %br/
+            %input{:maxlength => "255", :name => "", :type => "text"}/
+          %p
+            %input{:type => "submit", :value => "Sign Up"}/
+        / .half
+        .clearing
+    / .content
+  / .container
+  #contact.container.white_background.border.museo-sans
+    .content
+      %h2.underlined.center-text.museo-slab
+        %span Contact
+      %p.center-text
+      %form{:action => "", :method => "post"}
+        %p
+          %label Email Address
+          %br/
+          %input{:maxlength => "255", :name => "", :type => "email"}/
+        %p
+          %label Subject
+          %br/
+          %input{:maxlength => "255", :name => "", :type => "text"}/
+        %p
+          %label Message
+          %br/
+          %textarea
+        .contact_footer
+          .half.float_left
+            %p.eighty.museo-slab.italic
+              We are in beta. We appreciate your feedback.
+          .half.float_left.right_align
+            %p
+              %input{:type => "submit", :value => "Send Message"}/
+        / .contact_footer
+    / .content
+  / .container #contact
+/ #page
+= javascript_include_tag "application"
+= javascript_include_tag "heyoo"

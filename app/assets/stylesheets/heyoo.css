@@ -1,0 +1,1054 @@
+body
+{
+  background-color: #FFF;
+  color: #4D4D4D;
+  font-family: 'museo-slab', serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 9pt; 
+  letter-spacing: 1px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.museo-sans
+{
+  font-family: 'museo-sans', sans-serif;
+}
+
+.museo-slab
+{
+  font-family: 'museo-slab', sans-serif;
+}
+
+.italic
+{
+  font-style: italic;
+}
+
+p
+{
+  margin: 0px 0px 1em 0px;
+}
+
+h2
+{
+  font-size: 14pt;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+h3
+{
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 10px 0px;
+  font-size: 22pt;
+  margin: 0px 0px 15px 0px;
+}
+
+input[type="text"], input[type="password"], input[type="email"], textarea
+{
+  background-color: transparent;
+  border: 2px solid #6E6E6E;
+  color: #000;
+}
+
+#page
+{
+  position: relative;
+}
+
+.center-text
+{
+  text-align: center;
+}
+
+.container
+{
+  width: auto;
+  z-index: 0;
+  margin: 0px;
+  padding: 50px 0px 230px 0px;
+  position: relative;
+}
+
+.content
+{
+  position: relative;
+  width: 960px;
+  margin: 0px auto;
+  font-size: 18pt;
+  padding: 0px 16px;
+}
+
+#header
+{
+  min-height: 50px;
+  margin: 0px 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #FFF;
+  padding: 0px 0px 0px 0px;
+  
+  z-index: 10;
+}
+
+#mobile_nav_switch
+{
+  display: none;
+}
+
+#header .content
+{
+  width: auto;
+  margin: 0px 16px;
+  font-size: 8pt;
+  padding: 0px;
+}
+
+#header ul
+{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-family: 'museo-sans', sans-serif;
+}
+
+#header ul li
+{
+  float: left;
+  margin-left: 40px;
+  padding: 10px;
+  font-weight: normal;
+}
+
+#header ul li.signup
+{
+  background-color: #FFCCCC;
+}
+
+#header ul li a
+{
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#header ul li.current, #header ul li:hover
+{
+  border-bottom: 3px solid #333;
+  padding-bottom: 10px;
+}
+
+#home
+{
+  margin-top: 12px;
+  text-transform: uppercase;
+  font-size: 24pt;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+
+#test
+{
+  background-color: #8C9599;
+  padding-bottom: 0px;
+}
+
+#test h2
+{
+  font-size: 14pt;
+  line-height: 1.6em;
+  letter-spacing: 3px;
+  font-weight: 300;
+  color: #D8D7D4;
+}
+
+#building
+{
+  width: 960px;
+  margin-top: 0px;
+}
+
+.window div
+{
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 0px;
+}
+
+.window div img
+{
+  width: 100%;
+}
+
+.window div.neutral
+{
+  background-color: #b6bbbf;
+  -webkit-transition: background-color .35s;
+  -moz-transition: background-color .35s;
+  -o-transition: background-color .35s;
+    transition: background-color .35s;
+}
+
+.window div.off
+{
+  background-color: #FFF;
+  -webkit-transition: background-color .35s;
+  -moz-transition: background-color .35s;
+  -o-transition: background-color .35s;
+    transition: background-color .35s;
+}
+
+.window div.connected
+{
+  background-color: #fcee21;
+  -webkit-transition: background-color .35s;
+  -moz-transition: background-color .35s;
+  -o-transition: background-color .35s;
+    transition: background-color .35s;
+}
+
+#login_screen, #home .content
+{
+
+}
+
+#login_screen
+{
+  position: absolute;
+  top: 982px;
+  left: 0px;
+  height: 800px;
+  width: 100%;
+  background-color: #3D3D3D; 
+  -webkit-transition: top .35s;
+  -moz-transition: top .35s;
+  -o-transition: top .35s;
+    transition: top .35s;
+    overflow: hidden;
+}
+
+#login_screen.visible
+{
+  top: 0px;
+  -webkit-transition: top .35s;
+  -moz-transition: top .35s;
+  -o-transition: top .35s;
+    transition: top .35s;
+}
+
+#login_screen p
+{
+  width: 331px;
+  margin: 0px auto 20px auto;
+}
+
+#login_screen input[type="text"], #login_screen input[type="password"],  #login_screen input[type="email"]
+{
+  width: 331px;
+  font-size: 12pt;
+}
+
+#login_screen input[type="submit"]
+{
+  width: 341px;
+  background-color: #FFF;
+  color: #145C71;
+}
+
+/*#login_screen input[type="text"], #login_screen input[type="password"], #login_screen input[type="email"]
+{
+  border: 0px;
+  border-bottom: 1px solid #FFF;
+  background-color: transparent;
+  color: #FFF;
+  border-radius: 0;
+}*/
+
+#login_screen p.note, #login_screen p.note a
+{
+  color: yellow;
+  font-size: 70%;
+  font-weight: normal;
+  margin-top: 1em;
+}
+
+#login_screen p.note a
+{
+  text-decoration: none;
+}
+
+.error
+{
+  display: none;
+  opacity: 0;
+  position: absolute;
+  background-color: #BB1C37;
+  width: 350px;
+  height: 300px;
+  font-weight: normal;
+  top: 0px;
+  left: 33%;
+  font-size: 8pt;
+  color: #FFF;
+  text-transform: uppercase;
+  -webkit-transition: opacity .35s;
+  -moz-transition: opacity .35s;
+  -o-transition: opacity .35s;
+    transition: opacity .35s;
+}
+
+.error.visible
+{
+  display: block;
+  top: 0px;
+  opacity: 1;
+  -webkit-transition: all, top .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+    transition: all .35s;
+  
+}
+
+.error .img_holder
+{
+  width: 200px;
+  margin: 0px auto;
+  height: 100px;
+  display: block;
+}
+
+.error input[type="email"]
+{
+  border: 0px;
+  border-bottom: 1px solid #FFF;
+}
+
+.error a
+{
+  color: yellow;
+  text-decoration: none;
+}
+
+#login_screen .error p
+{
+  width: 100%;
+}
+
+.error form
+{
+  margin-top: 0px;
+}
+
+#about
+{
+  background-image: url("/assets/grain.jpg");
+  background-repeat: repeat;
+  background-position: top, left;
+}
+
+#about h2
+{
+  margin-bottom: 70px;
+}
+
+#about h3
+{
+  line-height: 1.4em;
+}
+
+#about p
+{
+  width: 600px;
+  margin: 0px;
+  font-size: 12pt;
+  line-height: 1.6em;
+}
+
+#skyline
+{
+  position: absolute;
+  right: 25px;
+  bottom: 0px;
+  width: 376px;
+}
+
+#sign-up h2
+{
+
+}
+
+#sign-up h3
+{
+  margin-bottom: 30px;
+}
+
+h2.underlined
+{
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+h2.underlined span
+{
+  border-bottom: 2px solid #4D4D4D;
+  padding: 0px .5em;
+}
+
+.logo
+{
+  width: 150px;
+  margin-top: 10px;
+}
+
+.splash
+{
+  position: relative;
+  top: 100px;
+  width: 100%;
+}
+
+.img_holder img
+{
+  width: 100%;
+  display: block;
+}
+
+.grid-img
+{
+  width: 240px;
+  margin: 0px auto 40px auto;
+}
+
+.computers
+{
+  width: 360px;
+  margin: 100px auto 0px auto;
+}
+
+.float_left { float: left; }
+.float_right { float: right; }
+.clearing { clear: both; }
+
+#sign-up
+{
+  font-size: 24pt;
+}
+
+form
+{
+  margin-top: 150px;
+}
+
+select, input, option, textarea
+{
+  
+}
+
+select, input, option, textarea
+{
+  font-family: 'Avenir', sans-serif;
+  font-size: 24pt;
+  padding: .25em;
+  width: 80%;
+}
+
+textarea
+{
+  height: 100px;
+}
+
+select
+{
+  -webkit-appearance: none;
+  background-color: #CCC;
+  color: #4D4D4D;
+  width: 84%;
+  border: 0px;
+  border-radius: 0px;
+  background-image: url('/assets/arrow.png');
+  background-repeat: no-repeat;
+  background-position: 360px center;
+  background-size: 26px 13px;
+  font-size: 18pt;
+  padding: .5em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+}
+
+label
+{
+  text-transform: uppercase;
+  margin-left: .5em;
+}
+
+input[type="submit"]
+{
+  -webkit-appearance: none;
+  border: 0px;
+  text-transform: uppercase;
+  border-radius: 0px;
+  background-color: #333;
+  color: #FFF;
+  font-size: 12pt;
+  padding: 1.3em;
+  width: 84%;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+
+#sign-up input[type="text"], #sign-up input[type="password"], #sign-up input[type="email"], #sign-up textarea
+{
+  background-color: transparent;
+  border: 2px solid #6E6E6E;
+  color: #FFF;
+}
+
+#contact
+{
+}
+
+.contact_footer
+{
+  width: 884px;
+}
+
+.eighty
+{
+  font-size: 80%;
+  padding-top: 1em;
+}
+
+.right_align
+{
+  text-align: right;
+}
+
+
+#contact input[type="text"], #contact input[type="password"], #contact input[type="email"], #contact textarea
+{
+  background-color: transparent;
+  border: 2px solid #6E6E6E;
+  color: #000;
+  width: 90%;
+}
+
+#contact input[type="submit"]
+{
+  width: 75%;
+}
+
+p.state
+{
+  width: 100px;
+  margin-right: 20px;
+}
+
+p.zip
+{
+  width: 330px;
+}
+
+.half
+{
+  width: 50%;
+}
+
+/* -- */
+
+.white_background
+{
+  background-color: #FFF;
+}
+
+.grain_background
+{
+  
+}
+
+.grey_background
+{
+  background-color: #F4F4F4;
+}
+
+.home_background
+{
+  background-color: #135C70;
+  color: #FFF;
+}
+
+.yellow_background
+{
+  background-color: #FCEE21;
+  color: #000;
+}
+
+.pink_background
+{
+  background-color: #e7515e;
+  color: #FFF;
+}
+
+.torquoise_background
+{
+  background-color: #37C4B6;
+  color: #FFF;
+}
+
+.purple_background
+{
+  background-color: #6D6592;
+  color: #FFF;
+}
+
+.navy_background
+{
+  background-color: #145C71;
+  color: #FFF;
+}
+
+::-webkit-input-placeholder {
+     color: #BBB;
+     text-transform: uppercase;
+     font-size: 12pt;
+     letter-spacing: 1px;
+     font-family: 'museo-sans', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+  }
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #BBB;  
+   text-transform: uppercase;
+   font-size: 12pt;
+   letter-spacing: 1px;
+   font-family: 'museo-sans', sans-serif;
+font-style: normal;
+font-weight: 100;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #BBB;  
+   text-transform: uppercase;
+   font-size: 12pt;
+   letter-spacing: 1px;
+   font-family: 'museo-sans', sans-serif;
+font-style: normal;
+font-weight: 100;
+}
+
+:-ms-input-placeholder {  
+   color: #BBB;  
+   text-transform: uppercase;
+   font-size: 12pt;
+   letter-spacing: 1px;
+   font-family: 'museo-sans', sans-serif;
+font-style: normal;
+font-weight: 100;
+}
+
+@media all and (max-width: 700px) {
+  
+  h2
+  {
+    font-size: 10pt;
+    font-weight: 300;
+  }
+  
+  h2.underlined
+  {
+    font-size: 16pt;
+    margin-top: 0px;
+  }
+  
+  h2.underlined span
+  {
+    border-bottom: 2px solid #4D4D4D;
+  }
+  
+  #header
+  {
+    background-color: #333;
+    color: #FFF;
+    height: 100%;
+  }
+  
+  #header .content
+  {
+    font-size: 14pt;
+  }
+  
+  #page
+  {
+    -webkit-transition: left 0.3s ease-out;
+    position: relative;
+    z-index: 10;
+  }
+  
+  #page.opened
+  {
+    top: 0px;
+    left: 75%;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: left 0.3s ease-out;
+    box-shadow: 2px 0px 4px 4px #000;
+  }
+  
+  #mobile_header
+  {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #FFF;
+    z-index: 12;
+    -webkit-transition: left 0.3s ease-out;
+  }
+  
+  #mobile_header.opened
+  {
+    left: 75%;
+    -webkit-transition: left 0.3s ease-out;
+    
+  }
+  
+  #mobile_header .logo
+  {
+    text-align: center;
+    margin: 17px auto 0px auto;
+    width: 150px;
+  }
+  
+  #mobile_nav_switch
+  {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 60px;
+    z-index: 11;
+  }
+  
+  #mobile_nav_switch img
+  {
+    margin-top: 13px;
+  }
+  
+  #header .content
+  {
+
+  }
+  
+  #header .logo
+  {
+    display: block;
+    position: fixed;
+    height: 50px;
+    z-index: 11;
+    background-image: url('heyoo_logo_white.png');
+    background-repeat: no-repeat;
+    background-size: 150px auto;
+    margin-top: 17px;
+  }
+  
+  #header .logo img
+  {
+    display: none;
+  }
+  
+  #header ul
+  {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #333;
+    padding-top: 80px;
+  }
+  
+  #header ul.visible
+  {
+    display: block;
+  }
+  
+  #header ul li
+  {
+    float: none;
+    margin-left: 10px;
+    padding: 15px 10px;
+  }
+  
+  #header ul li.signup
+  {
+  
+    background-color: transparent;
+  }
+  
+  #header ul li a
+  {
+    color: #FFF;
+    display: block;
+    width: 100%;
+  }
+  
+  #test h2
+  {
+    line-height: 1.8em;
+  }
+  
+  #building
+  {
+    margin: 40px auto 0px auto;
+    overflow: hidden;
+    width: 96%;
+    height: 300px;
+    
+  }
+  
+  #home
+  {
+    height: auto;
+    min-height: 0px;
+    margin-top: 60px;
+  }
+  
+  #home .content {
+    height: auto;
+    margin-top: 0px;
+  }
+  
+  #login_screen
+  {
+    height: 452px;
+  }
+  
+  #login_screen input[type="submit"]
+  {
+    width: 88.2%;
+  }
+  
+  #login_screen p
+  {
+    width: auto;
+    margin-top: 15px;
+  }
+  
+  #login_screen input[type="text"], #login_screen input[type="password"], #login_screen input[type="email"]
+  {
+    width: 85%;
+    font-size: 12pt;
+  }
+  
+  #login_screen form
+  {
+    margin-top: 55px;
+  }
+  
+  #login_screen p.note, #login_screen p.note a
+  {
+    font-weight: bold;
+    font-size: 90%;
+    letter-spacing: 1px;
+  }
+  
+  ::-webkit-input-placeholder {
+     font-size: 12pt;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     font-size: 12pt;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     font-size: 12pt;
+  }
+
+  :-ms-input-placeholder {  
+     font-size: 12pt;
+  }
+  
+  .splash
+  {
+    position: relative;
+    top: 0px;
+  }
+  
+  #about
+  {
+    padding-bottom: 0px;
+  }
+  
+  #about p
+  {
+    width: auto;
+  }
+  
+  #skyline
+  {
+    position: relative;
+    width: 98%;
+    right: 0px;
+    margin: 0px auto;
+  }
+  
+  .grid-img
+  {
+    width: 50%;
+    margin: 0px auto 40px auto;
+  }
+  
+  .computers
+  {
+    width: 70%;
+    margin: 0px auto;
+  }
+
+  
+  .container
+  {
+    width: auto;
+    min-height: 0px;
+    z-index: 10;
+    margin: 0px;
+    overflow: hidden;
+    padding-top: 45px;
+  }
+  
+  .container, #contact, #sign-up
+  {
+    padding-bottom: 85px;
+  }
+  
+  .content
+  {
+    position: relative;
+    width: 95%;
+    margin: 0px auto 0px auto;
+    font-size: 10pt;
+    padding: 0px;
+  }
+  
+  #sign-up .content
+  {
+    margin: 0px auto;
+  }
+  
+  #sign-up h2
+  {
+    
+  }
+  
+  .half
+  {
+    width: auto;
+  }
+  
+  .half h3
+  {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .float_left
+  {
+    float: none;
+  }
+  
+  select, input, option, textarea
+  {
+    width: 94%;
+  }
+  
+  textarea
+  {
+    height: 150px;
+    width: 96%;
+    font-size: 12pt;
+  }
+  
+  input
+  {
+    font-size: 20pt;
+  }
+
+  select
+  {
+    width: 100%;
+    height: 53px;
+    background-image: url('/assets/arrow.png');
+    background-repeat: no-repeat;
+    background-position: 260px center;
+    background-size: 26px 13px;
+  }
+  
+  form
+  {
+    margin-top: 75px;
+  }
+  
+  label, select
+  {
+    font-size: 12pt;
+  }
+  
+  input[type="submit"]
+  {
+    width: 99.5%;
+  }
+  
+  p.state
+  {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  p.zip
+  {
+    width: 100%;
+  }
+  
+  #contact input[type="submit"]
+  {
+    width: 100%;
+  }
+  
+  #contact input[type="text"], #contact input[type="password"], #contact input[type="email"]
+  {
+    width: 96%;
+  }
+  
+  #contact textarea
+  {
+    width: 97%;
+  }
+  
+  .contact_footer {
+    width: auto;
+  }
+  
+  .eighty {
+    font-size: 80%;
+    padding-top: 0em;
+  }
+}
