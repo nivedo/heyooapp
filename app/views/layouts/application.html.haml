@@ -7,7 +7,7 @@
       = stylesheet_link_tag "heyoo"
     - else
       = stylesheet_link_tag    "application", :media => "all"
-      
+
     = javascript_include_tag "modernizr"
     = javascript_include_tag "fastclick"
     -#
@@ -59,20 +59,12 @@
                   %span.left #{@title}
                   - if @embed_post
                     %label{:for => "post_box"}
-                      %img{:src => "/assets/compose_turq.png"}
+                      = image_tag "compose_turq.png"
                       %span New Post
                     %input{:id => "post_box", :type => "checkbox"}
                     .post-box
                       .post-wrapper
                         = render :partial => 'contents/post'
-                  - if @embed_reply
-                    %label{:for => "reply_box"}
-                      %img{:src => "/assets/reply-arrow.svg"}
-                      %span Reply
-                    %input{:id => "reply_box", :type => "checkbox"}
-                    .post-box
-                      .post-wrapper
-                        = render :partial => 'contents/reply'
               = yield
         - if @show_reply
           .push
@@ -90,4 +82,4 @@
 
       = javascript_include_tag "application"
       :javascript
-        $.backstretch("/assets/skyline-color.jpg", {centeredX: false, centeredY: false});
+        $.backstretch('#{asset_path("skyline-color.jpg")}', {centeredX: false, centeredY: false});

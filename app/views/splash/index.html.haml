@@ -1,7 +1,7 @@
 #header.container
   .content
     .logo.img_holder
-      %img{:alt => "Heyoo Logo", :src => "/assets/heyoo_logo.png"}/
+      = image_tag("heyoo_logo.png", :alt => "Heyoo Logo")
     %ul
       %li
         %a.scrolling{:href => "#about"} About
@@ -18,9 +18,9 @@
 #page
   #mobile_header
     #mobile_nav_switch.img_holder
-      %img{:alt => "", :src => "/assets/burger.png"}/
+      = image_tag("burger.png", :alt => "")
     .logo.img_holder
-      %img{:alt => "Heyoo", :src => "/assets/heyoo_logo.png"}/
+      = image_tag("heyoo_logo.png", :alt => "Heyoo")
   / #mobile_header
   #test.container.white_background.border.center-text
     %h2
@@ -30,7 +30,7 @@
       %br/
       Communication
     #building.content.img_holder
-      %img{:alt => "", :src => "/assets/city.png"}/
+      = image_tag("city.png", :alt => "")
     / .content
     /LOGIN COMMENTED OUT
     #login_screen.container
@@ -86,7 +86,7 @@
         communi observantia non est recedendum. Sed posuere consecteturest at lobortis..
     / .content
     #skyline.img_holder
-      %img{:alt => "", :src => "/assets/buildings.png"}/
+      = image_tag("buildings.png", :alt => "")
   / .container
   #sign-up.container.grey_background.border.museo-sans{:style => "z-index: 4;"}
     .content

@@ -4,15 +4,15 @@
       .navleft
         .navmenu
           %label{:for => "nav_check"}
-            %img{:src => "/assets/menu.svg", :class => "lefticon"}
+            = image_tag(:src => "menu.svg"), :class => "lefticon"
         //= link_to image_tag("/assets/menu.svg"), root_url, :class => "note-icon"
     .navicon
-      = link_to image_tag("/assets/heyoo_logo_white.png"), root_url
+      = link_to image_tag("heyoo_logo_white.png"), root_url
     .welcome-text welcome to 353 w chicago.
     -#
       .navright
         .navbutton
-          = link_to image_tag("/assets/newpost-small.svg"), post_url, :class => "note-icon"
+          = link_to image_tag("newpost-small.svg"), post_url, :class => "note-icon"
 
   %input{:id => "nav_check", :type => "checkbox"}
   .nav-list
