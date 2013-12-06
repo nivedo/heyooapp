@@ -244,6 +244,8 @@
   background: $off-white;
   padding-left: 1em;
 
+  width: 95%;
+
   &:first-child {
     @include border-top-radius($default-radius);
   }
