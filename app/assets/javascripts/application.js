@@ -11,9 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
 //= require jquery.autosize.min
 //= require jquery.backstretch.min
 //= require jquery-fileupload/basic
-//= require_tree .
+//= require base

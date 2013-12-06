@@ -4,7 +4,7 @@
     %title Jarvis
 
     - if @splash_page
-      = stylesheet_link_tag "heyoo"
+      = stylesheet_link_tag "heyoo", 'data-turbolinks-track' => true
     - else
       = stylesheet_link_tag    "application", :media => "all"
 

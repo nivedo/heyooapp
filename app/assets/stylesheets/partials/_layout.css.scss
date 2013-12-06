@@ -42,6 +42,7 @@ body {
 .main-content {
   margin: 0 auto;
   width: 100%;
+  //@include animation(fadein 0.5s ease-in);
 
   @media (min-width: $transition-width) {
     width: $max-width - $sidebar-width;
