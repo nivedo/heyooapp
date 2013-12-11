@@ -109,6 +109,7 @@ fieldset {
 
     &:last-child {
       @include border-bottom-radius($default-radius);
+      border: 1px solid $border-gray;
     }
 
     font-weight: 300;
@@ -144,7 +145,7 @@ fieldset {
   }
 
   textarea {
-    //min-height: 8em;
+    min-height: 8em;
     resize: none; 
   }
 
@@ -183,12 +184,108 @@ fieldset {
   }
 }
 
+.inline-fields {
+  // Disable "zoom-in" effect
+  font-size: 1.6rem;
+
+  fieldset {
+    border: none;
+    max-width: 100%;
+  }
+
+  input:not([type="checkbox"]), select, textarea {
+    &:first-child {
+      @include border-top-radius($default-radius);
+    }
+
+    &:last-child {
+      @include border-bottom-radius($default-radius);
+      border-bottom: 1px solid $border-gray;
+    }
+
+    font-weight: 300;
+
+    @include placeholder {
+      color: lighten($blue-gray,40);
+      font-weight: 300;
+    }
+
+    @extend .block;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+
+    border: 1px solid $border-gray;
+    border-bottom: 0;
+    padding: 10px 2%;
+
+    width: 96%;
+    margin: 0px auto;
+
+    &:focus {
+      //box-shadow: 0 0 5px rgba(darken($accent-color,10),0.5);
+      //border: 1px solid rgba($accent-color,0.8);
+      outline: 0;
+    }
+
+    // Chrome is stupid
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+  }
+
+  textarea {
+    min-height: 5em;
+    resize: none; 
+  }
+
+  .button-wrapper {
+    height: 30px;
+    padding: 0.5em 0;
+
+    .submit {
+      float: right;
+    }
+  }
+
+  input[type="submit"] {
+    @extend .block;
+    padding: 8px 0;
+    max-width: 80px;
+    height: 30px;
+    margin: 0px auto;
+
+    border-radius: $default-radius;
+    background-color: $accent-color;
+    border: 0;
+    transition: background-color 0.1s;
+
+    color: white;
+    font-size: 0.8em;
+
+    .no-touch &:hover {
+      background-color: darken($accent-color, 5);
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
 // Embedded post box
 
 .post-box {
   width: 100%;
   margin-top: 10px;
   display: none;
+}
+
+.edit-box {
+  width: 100%;
+  margin-top: 10px;
 }
 
 .post-wrapper {

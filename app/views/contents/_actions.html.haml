@@ -4,7 +4,7 @@
       %li #{@content.children.length} Comments
     - if content.permitted_actions(current_user).include?(:edit)
       %li
-        = link_to "Edit", root_url
+        = link_to "Edit", edit_content_url(content.id), 'data-no-turbolink' => true
     - if content.permitted_actions(current_user).include?(:thank)
       %li
         = link_to "Thank", root_url, :class => "soft"

@@ -8,12 +8,7 @@
     - else
       = stylesheet_link_tag    "application", :media => "all"
 
-    = javascript_include_tag "modernizr"
-    = javascript_include_tag "fastclick"
-    -#
-      = javascript_include_tag "https://use.typekit.net/dey0ita.js"
-      :javascript
-        try{Typekit.load();}catch(e){}
+    = javascript_include_tag "application"
     - if @splash_page
       %script{:src => "//use.typekit.net/kgt1tta.js", :type => "text/javascript"}
       :javascript
@@ -79,7 +74,5 @@
             .reply-box
               .reply-wrapper
                 = render :partial => 'contents/reply'
-
-      = javascript_include_tag "application"
       :javascript
         $.backstretch('#{asset_path("skyline-color.jpg")}', {centeredX: false, centeredY: false});

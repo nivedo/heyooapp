@@ -1,11 +1,13 @@
 
 
--#
-  .embed-wrapper
-    = form_for(@reply, :html => { :class => 'embed-fields' }) do |f|
+.box-wrapper.comment.reply-form
+  .avatar
+    = image_tag avatar_url(current_user), :class => "user-icon"
+  .summary-content
+    = form_for(@reply, :remote => true, :authenticity_token => true, :url => { :action => "create_reply" }, :html => { :class => 'inline-fields' }) do |f|
       = f.hidden_field :parent_id, :value => @content.id
       %fieldset
-        = f.text_area :description, :placeholder => "Add a reply...", :class => "req", :rows => "4"
+        = f.text_area :description, :placeholder => "Add a reply...", :class => "req", :id => "reply_field"
       .button-wrapper
         
         
@@ -16,22 +18,4 @@
         
         
         = f.submit "Post", :class => "submit"
-
-.box-wrapper.comment
-  .avatar
-    = image_tag avatar_url(current_user), :class => "user-icon"
-  = form_for(@reply, :html => { :class => 'embed-fields' }) do |f|
-    = f.hidden_field :parent_id, :value => @content.id
-    %fieldset
-      = f.text_area :description, :placeholder => "Add a reply...", :class => "req", :rows => "1"
-    .button-wrapper
-      
-        
-      .file-input-wrapper
-        %button.btn-file-input
-          = image_tag("w_photo.png")
-        = f.file_field :file
-      
-        
-      = f.submit "Post", :class => "submit"
 

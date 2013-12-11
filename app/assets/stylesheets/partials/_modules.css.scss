@@ -240,24 +240,44 @@
   }
 }
 
+
+.box-description {
+  h1, h2, h3 {
+    color: #333;
+    margin-bottom: 1em;
+  }
+
+  p, ul, dl, table {
+    margin-bottom: 1em;
+  }
+
+  ul {
+    list-style: disc inside;
+  }
+}
+
 .comment {
   background: $off-white;
   padding-left: 1em;
 
-  width: 95%;
+  width: 94%;
+
+  .summary-content {
+    margin-right: 0.5em;
+  }
 
   &:first-child {
     @include border-top-radius($default-radius);
   }
 
-  &:last-child {
-    margin-bottom: 1.5em;
-    @include border-bottom-radius($default-radius);
-  }
-
   border-top: none;
 }
 
+.reply-form {
+  padding-bottom: 0.25em;
+  margin-bottom: 1.5em;
+  @include border-bottom-radius($default-radius);
+}
 
 .push {
   height: $footer-height;

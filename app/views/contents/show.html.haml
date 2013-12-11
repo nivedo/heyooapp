@@ -2,6 +2,7 @@
 
 .comments-wrapper
   - unless @content.children.nil?
-    - @content.children.each do |child|
-      = render "comment", :content => child
+    .comments-inner
+      - @content.children.each do |child|
+        = render "comment", :content => child
     = render "reply"

@@ -1,7 +1,7 @@
 .box-wrapper.comment
   .avatar
     = image_tag avatar_url(content.user), :class => "user-icon"
-  .summary-content
+  .summary-content{:id => "comment_" + content.id.to_s}
     .text-line
       .line-name
         %span.passive-text 
