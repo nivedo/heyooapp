@@ -1,2 +1,12 @@
+- if @embed_post
+  -#
+    %label{:for => "post_box"}
+      = image_tag "compose_turq.png"
+      %span New Post
+    %input{:id => "post_box", :type => "checkbox"}
+  .post-box
+    .post-wrapper
+      = render :partial => 'contents/post'
+
 - @contents.each do |content|
   = render "summary", :content => content

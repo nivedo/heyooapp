@@ -13,6 +13,7 @@ Heyoo::Application.routes.draw do
   get "post", :to => "contents#new", :as => "post"
 
   post '/contents/create_reply', controller: 'contents', action: 'create_reply'
+  resources :messages
   
 
 end

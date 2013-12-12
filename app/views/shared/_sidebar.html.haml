@@ -4,7 +4,7 @@
       %li 
         = link_to "Discussions", root_url, :class => ( current_page?( root_url ) ? "active" : "")
       %li
-        = link_to "Inbox", root_url
+        = link_to "Inbox", messages_url, :class => ( current_page?( messages_url ) ? "active" : ""), 'data-no-turbolink' => true
       %li 
         = link_to "Directory", users_url, :class => ( current_page?( users_url ) ? "active" : "")
       %li 

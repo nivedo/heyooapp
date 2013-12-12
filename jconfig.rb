@@ -1,7 +1,7 @@
 # JCONFIG.RB
 
 # Blueprint Modules
-@BLUEPRINTS = ["ancestry","carrierwave","params"]
+@BLUEPRINTS = ["ancestry","carrierwave","params","inbox"]
 
 @PARAMS = {
   :appname => "Heyoo",

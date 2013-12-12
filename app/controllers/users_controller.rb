@@ -19,8 +19,17 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all;
+    @users = User.order(:last_name);
     @title = "Directory";
+    respond_to do |format|
+      format.html
+      format.json {
+        userlist = @users.where("first_name like ? OR last_name like ?", "%#{params[:q]}%", "%#{params[:q]}%").map do |u|
+          { :id => u.id, :name => u.first_name + " " + u.last_name }
+        end
+        render :json => userlist
+      }
+    end
   end
 
   private

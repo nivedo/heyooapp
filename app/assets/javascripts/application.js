@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.autosize.min
+//= require jquery.tokeninput
 //= require jquery.backstretch.min
 //= require jquery-fileupload/basic
 //= require modernizr

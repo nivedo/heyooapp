@@ -9,6 +9,7 @@
       = stylesheet_link_tag    "application", :media => "all"
 
     = javascript_include_tag "application"
+    = javascript_include_tag params[:controller]
     - if @splash_page
       %script{:src => "//use.typekit.net/kgt1tta.js", :type => "text/javascript"}
       :javascript
@@ -52,14 +53,6 @@
               - if @title
                 .main-title
                   %span.left #{@title}
-                  - if @embed_post
-                    %label{:for => "post_box"}
-                      = image_tag "compose_turq.png"
-                      %span New Post
-                    %input{:id => "post_box", :type => "checkbox"}
-                    .post-box
-                      .post-wrapper
-                        = render :partial => 'contents/post'
               = yield
         - if @show_reply
           .push
