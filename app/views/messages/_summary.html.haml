@@ -1,6 +1,6 @@
 .box-wrapper.message-wrapper
   %a{:href => content_url(content.id)}
-    %div
+    .clickable
       .avatar
         = image_tag avatar_url(content.user), :class => "user-icon"
       .summary-content

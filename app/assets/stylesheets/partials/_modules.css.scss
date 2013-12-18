@@ -349,6 +349,12 @@
 
 .message-wrapper {
   //border: none;
+  padding: 0;
+  
+  .clickable {
+    padding: 1.25em 1em 1.5em;
+  }
+
   .avatar {
     display: inline-block;
     float: left;
