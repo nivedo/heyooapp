@@ -345,6 +345,76 @@
   }
 }
 
+// Messanging
+
+.message-wrapper {
+  //border: none;
+  .avatar {
+    display: inline-block;
+    float: left;
+    height: 3.5em;
+    padding: 0;
+
+    img {
+      border-radius: $default-radius;
+      height: 100%;
+      width: 3.5em;
+      margin-right: 1em;
+    }
+  }
+
+  .time-text {
+    display: inline-block;
+    float: right;
+  }
+
+  .message-text {
+    color: #333;
+  }
+
+  .summary-content {
+    margin-left: 4.5em;
+  }
+
+  &:hover {
+    background: $off-white;
+  }
+}
+
+.message-head {
+  //@include clearfix;
+  font-weight: 300;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  //padding: 0.5em 0;
+  width: 100%;
+
+  color: $accent-color;
+
+  //background-color: $off-white;
+
+  .three:not(:last-child):after {
+    content: ",";
+  }
+
+  .two:last-child:before, .three:last-child:before {
+    content: "and ";
+  }
+
+  ul li {
+    float: left;
+    margin-right: 0.25em;
+
+    &:not(:last-child):after {
+      content: ","
+    }
+
+    &:first-child {
+      //text-indent: 0.5em;
+    }
+  }
+}
+
 // Hacky reply footer stuff
 
 [type=checkbox] {
