@@ -1,9 +1,12 @@
 class ContentsController < ApplicationController
+  respond_to :js, :html, :json
   before_filter :require_login
 
   def new
-    @content = Content.new(:parent_id => params[:parent_id])
+    @content = Content.new
+    @content.parent_id = params[:parent_id]
     
+    respond_with @content
   end
 
   def create
@@ -19,34 +22,35 @@ class ContentsController < ApplicationController
       end
     
 
-    respond_to do |format|
-      if @content.save
-        format.js
-        format.html {
-          if params[:content][:parent_id].nil? || params[:content][:parent_id].empty?
-            redirect_to contents_url, :flash => { :success => "New content posted!" }
-          else
-            redirect_to content_url(@content.ancestry), :flash => { :success => "Comment Posted!" }
-          end
-        }
-        format.json { render json: @content }
-      else
-        format.js
-        format.html { render action: "new" }
-        format.json { render json: @content.errors }
+    if @content.save
+      redirect_url = contents_url
+      flash[:success] = "New content posted!"
+
+      unless params[:content][:parent_id].empty?
+        redirect_url = content_url(@content.ancestry)
+        flash[:success] = 'Comment Posted!'
       end
+      
     end
+
+    respond_with(@content, :location => redirect_url)
   end
 
   def index
-    @contents = Content.where({ancestry: nil}).order('created_at DESC')
-    @uploader = Image.new.attachment
-    @uploader.success_action_redirect = root_url
-    
     @user = current_user
     @title = "Discussions"
-    @embed_post = true;
+    @embed_post_link = "New Discussion";
     @content = Content.new
+
+    @contents = Content.order('created_at DESC')
+
+    @contents = @contents.where({ancestry: nil})
+    @uploader = Image.new.attachment
+    @uploader.success_action_redirect = root_url
+    @contents = @contents.where({message_id: nil})
+    
+
+    respond_with @content
   end
 
   def show
@@ -62,6 +66,8 @@ class ContentsController < ApplicationController
       redirect_to content_url(@content.ancestry)
     end
     
+
+    respond_with @content
   end
 
   def edit
@@ -69,16 +75,20 @@ class ContentsController < ApplicationController
 
     @title = @content.ancestry ? 'Edit Comment' : 'Edit Post'
     
+
+    respond_with @content
   end
 
   def update
-    content = Content.find(params[:id])
+    @content = Content.find(params[:id])
     
-    if content.update_attributes(content_params)
-      redirect_to content_url(content.id), :flash => { :success => "Post Updated!" }
-    else
-      render 'edit'
+    if @content.update_attributes(content_params)
+      flash[:success] = "Post Updated!"
     end
+
+    
+
+    respond_with @content
   end
 
   def content_params

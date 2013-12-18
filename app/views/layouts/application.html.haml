@@ -53,6 +53,10 @@
               - if @title
                 .main-title
                   %span.left #{@title}
+                  - if @embed_post_link
+                    %label{:for => "post_box"}
+                      %img{:src => "/assets/compose_turq.png"}
+                      %span #{@embed_post_link}
               = yield
         - if @show_reply
           .push

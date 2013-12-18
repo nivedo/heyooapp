@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :usergroups
+  has_many :memberships, through: :usergroups, class_name: 'Group', source: :group
+  
+
   has_secure_password
 
   before_save { |user| user.email = email.downcase }

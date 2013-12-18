@@ -1,33 +1,34 @@
 class UsersController < ApplicationController
+  respond_to :js, :html, :json
+
   def new
     @user = User.new
+
+    respond_with @user
   end
 
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        session[:user_id] = @user.id
-        format.html { redirect_to root_url, :notice => "Signed up!" }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    
+    if @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "Signed Up!"
     end
+
+    respond_with @user
   end
 
   def index
     @users = User.order(:last_name);
     @title = "Directory";
-    respond_to do |format|
-      format.html
+
+    
+
+    respond_with(@users) do |format|
       format.json {
-        userlist = @users.where("LOWER(first_name) like ? OR LOWER(last_name) like ?", "%#{params[:q].downcase}%", "%#{params[:q].downcase}%").map do |u|
-          { :id => u.id, :name => u.first_name + " " + u.last_name }
-        end
-        render :json => userlist
+        @userList = @users.map { |u| { :id => u.id, :name => u.first_name + " " + u.last_name } }
+        @userList = @userList.find_all{ |u| u[:name].downcase.include?(params[:q].downcase) } if params[:q]
+        render :json => @userList
       }
     end
   end

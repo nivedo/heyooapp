@@ -1,6 +1,13 @@
 
 
+%input{:id => "post_box", :type => "checkbox", :checked => true}
 .post-box
   .post-wrapper
     = render :partial => 'messages/post'
+
+- @messages.each do |message|
+  %div Conversation between
+  - message.group.members.each do |member|
+    %span #{member.email}
+  = render partial: "contents/summary", locals: {content: message.content}
 

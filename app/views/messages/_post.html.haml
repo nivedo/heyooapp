@@ -5,8 +5,8 @@
     %fieldset
       .inset-label
         %label To: 
-      = f.text_field :title, :class => "req", :id => "recipients_list"
-      = f.text_area :description, :placeholder => "Write your message here...", :class => "req", :rows => "6"
+      = text_field_tag :recipients, nil, :class => "req", :id => "recipients_list"
+      = text_area_tag :description, nil, :placeholder => "Write your message here...", :class => "req", :rows => "6"
     .button-wrapper
       = f.submit "Post", :class => "submit"
 
