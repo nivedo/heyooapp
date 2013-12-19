@@ -1,0 +1,26 @@
+
+
+.chat-wrapper
+  .chat-left
+    .avatar
+      /- unless content.user == current_user
+      = image_tag avatar_url(current_user), :class => "user-icon"
+      = link_to current_user.first_name, user_url(current_user)
+    /%p.time-text #{time_ago_in_words(content.created_at)} ago
+  .chat-right.chat-reply-form.arrow-box-left
+    = form_for(@reply, :remote => true, :authenticity_token => true, :url => { :controller => "contents", :action => "create_chat_reply" }, :html => { :class => 'inline-fields' }) do |f|
+      = f.hidden_field :parent_id, :value => @content.id
+      %fieldset
+        = f.text_area :description, :placeholder => "Add a reply...", :class => "req", :id => "reply_field"
+      .button-wrapper
+        
+        
+        -#
+          .file-input-wrapper
+            %button.btn-file-input
+              = image_tag("w_photo.png")
+            = f.file_field :file
+        
+        
+        = f.submit "Post", :class => "submit"
+

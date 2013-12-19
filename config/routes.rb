@@ -14,6 +14,7 @@ Heyoo::Application.routes.draw do
 
   post '/contents/create_reply', controller: 'contents', action: 'create_reply'
   resources :messages
+  post '/contents/create_chat_reply', controller: 'contents', action: 'create_chat_reply'
   
 
 end

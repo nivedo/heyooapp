@@ -13,6 +13,7 @@ class Content < ActiveRecord::Base
     action_list = []
     if myuser == user
       action_list << :edit
+      action_list << :delete
     else
       unless ancestry?
         action_list << :report

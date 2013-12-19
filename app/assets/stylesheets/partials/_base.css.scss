@@ -17,6 +17,17 @@
   *zoom: 1;
 }
 
+@mixin accentlink {
+  a {
+    text-decoration: none;
+    color: $accent-color;
+      
+    &:hover {
+      color: darken($accent-color, 5);
+    }
+  }
+}
+
 // Colors
 
 $light-gray: #cdd4d8;
@@ -42,6 +53,8 @@ $off-white: #fcfcfc;
 $blue-white: #f1f4f6;
 $blue-gray: #546673;
 $border-gray: #e8eced;
+
+$border-gray: $blue-white;
 
 $off-white: #f9f9f9;
 

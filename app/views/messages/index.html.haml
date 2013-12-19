@@ -6,5 +6,5 @@
     = render :partial => 'messages/post'
 
 - @messages.each do |message|
-  = render "summary", :content => message.content, :message => message
+  = render "summary", :content => message.content, :message => message, :recipients => exclude_self(message.group.members)
 

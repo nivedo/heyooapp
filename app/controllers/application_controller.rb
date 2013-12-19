@@ -25,6 +25,12 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  def exclude_self(group)
+    group.delete_if{|x| x.id == current_user.id}
+  end
+  helper_method :exclude_self
+  
   
   helper_method :current_user, :has_actions?
 end

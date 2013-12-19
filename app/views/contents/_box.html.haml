@@ -16,4 +16,4 @@
     .box-description
       #{markdown content.description}
 
-  = render "actions", :content => content
+  = render partial: "contents/actions", locals: { content: content }

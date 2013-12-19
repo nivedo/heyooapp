@@ -37,10 +37,35 @@ class MessagesController < ApplicationController
 
     if @message.save
       redirect_url = messages_url
-      flash[:success] = "Message Sent!"
+      flash[:success] = "Message Sent!" if !request.xhr?
     end
 
     respond_with(@message, :location => redirect_url)
+  end
+
+  def show
+    @message = Message.find(params[:id])
+    @recipients = exclude_self(@message.group.members)
+    @reply = Content.new
+    @content = @message.content
+
+    @title = "Conversation with "
+
+    if @recipients.length == 1
+       @title = @title + @recipients.first.display_name
+    else
+      if @recipients.length == 2
+        @title = @title + @recipients.first.first_name + " and " + @recipients.last.first_name
+      else
+        @recipients.each do |r|
+          if r.id != @recipients.last.id
+            @title = @title + r.first_name + ", "
+          else
+            @title = @title + "and " + r.first_name
+          end
+        end
+      end
+    end
   end
 end
 

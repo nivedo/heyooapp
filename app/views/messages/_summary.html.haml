@@ -1,14 +1,12 @@
 .box-wrapper.message-wrapper
-  %a{:href => content_url(content.id)}
+  %a{:href => message_url(message.id)}
     .clickable
-      .avatar
-        = image_tag avatar_url(content.user), :class => "user-icon"
+      = render partial: 'groups/avatars', locals: { members: recipients }
       .summary-content
         .time-text #{time_ago_in_words(content.created_at)} ago
         .message-head
-          - message.group.members.each do |member|
-            - if member.id != current_user.id
-              %span{:class => message.group.members.length > 3 ? "three" : (message.group.members.length > 2 ? "two" : "") } #{member.first_name}
+          - recipients.each do |r|
+            %span{:class => recipients.length > 2 ? "three" : (recipients.length > 1 ? "two" : "") } #{r.first_name}
         .text-line
           .line-name
             %span.passive-text #{content.user.first_name}: 

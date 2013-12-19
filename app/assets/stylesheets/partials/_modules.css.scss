@@ -27,6 +27,8 @@
 .main-title {
   padding: 0.5em 0;
 
+  border-bottom: 1px solid $border-gray;
+
   @media (min-width: $transition-width) {
     padding: 0.5em 0;
   }
@@ -124,7 +126,11 @@
     display: block;
     margin: 0 auto;
     padding: 0.5em 0;
-    border-top: 1px solid $border-gray;
+    border-bottom: 1px solid $border-gray;
+
+    &:last-child {
+      border: none;
+    }
 
     zoom: 1;
     width: 100%;
@@ -155,9 +161,9 @@
 
   //background-color: $off-white;
 
-  border-top: 1px solid $blue-white;
+  border-bottom: 1px solid $border-gray;
 
-  &:first-of-type {
+  &:last-child {
     border: none;
   }
 
@@ -350,7 +356,7 @@
 .message-wrapper {
   //border: none;
   padding: 0;
-  
+
   .clickable {
     padding: 1.25em 1em 1.5em;
   }
@@ -359,19 +365,46 @@
     display: inline-block;
     float: left;
     height: 3.5em;
+    width: 4.75em;
     padding: 0;
 
+    position: relative;
+
     img {
-      border-radius: $default-radius;
+      border-radius: 99px;
       height: 100%;
       width: 3.5em;
       margin-right: 1em;
+    }
+
+    .first img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 75%;
+      width: 2.5em;
+      z-index: 0;
+    }
+
+    .second img {
+      position: absolute;
+      top: 1.25em;
+      left: 1.25em;
+      border: 3px solid white;
+
+      height: 75%;
+      width: 2.5em;
+      z-index: 1;
     }
   }
 
   .time-text {
     display: inline-block;
     float: right;
+  }
+
+  .passive-text {
+    font-weight: normal;
   }
 
   .message-text {
@@ -389,7 +422,7 @@
 
 .message-head {
   //@include clearfix;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.2em;
   margin-bottom: 0.5em;
   //padding: 0.5em 0;
@@ -418,6 +451,60 @@
     &:first-child {
       //text-indent: 0.5em;
     }
+  }
+}
+
+.chat-container {
+  margin: 1em 0;
+}
+
+.chat-wrapper {
+  @include clearfix;
+  padding: 0.5em 0;
+
+  @include accentlink;
+
+  .avatar {
+    width: 3em;
+    height: 100%;
+    float: left;
+    display: block;
+    text-align: center;
+    
+    img {
+      border-radius: $default-radius;
+      margin: 0 auto;
+      width: 2em;
+    }
+  }
+}
+
+.chat-left {
+  float: left;
+  width: 4.5em;
+}
+
+.chat-right {
+  float: left;
+  background: $blue-white;
+  max-width: 25em;
+  padding: 1em 1.25em;
+  border-radius: $default-radius;
+}
+
+.chat-self {
+  background: $accent-color;
+  color: white;
+  //float: right;
+}
+
+.chat-reply-form {
+  padding: 0.75em 0.75em 0;
+  width: 35em;
+  max-width: 35em;
+
+  form {
+    
   }
 }
 

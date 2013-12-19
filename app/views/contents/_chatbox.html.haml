@@ -1,0 +1,12 @@
+
+
+.chat-wrapper
+  .chat-left
+    .avatar
+      /- unless content.user == current_user
+      = image_tag avatar_url(content.user), :class => "user-icon"
+      = link_to content.user.first_name, user_url(content.user)
+    /%p.time-text #{time_ago_in_words(content.created_at)} ago
+  .chat-right.arrow-box-left{:class => content.user == current_user ? "chat-self" : "", :id => "chat_" + content.id.to_s}
+    #{markdown content.description}
+

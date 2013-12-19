@@ -24,11 +24,11 @@ class ContentsController < ApplicationController
 
     if @content.save
       redirect_url = contents_url
-      flash[:success] = "New content posted!"
+      flash[:success] = "New content posted!" if !request.xhr?
 
       unless params[:content][:parent_id].empty?
         redirect_url = content_url(@content.ancestry)
-        flash[:success] = 'Comment Posted!'
+        flash[:success] = 'Comment Posted!' if !request.xhr?
       end
       
     end
@@ -83,7 +83,7 @@ class ContentsController < ApplicationController
     @content = Content.find(params[:id])
     
     if @content.update_attributes(content_params)
-      flash[:success] = "Post Updated!"
+      flash[:success] = "Post Updated!" if !request.xhr?
     end
 
     
@@ -100,7 +100,17 @@ class ContentsController < ApplicationController
     )
   end
 
+  def destroy
+    @content = Content.find(params[:id])
+    @content.destroy
+
+    respond_with @content
+  end
+
   def create_reply
+    create
+  end
+  def create_chat_reply
     create
   end
   
